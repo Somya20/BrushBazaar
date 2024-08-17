@@ -1,13 +1,14 @@
+
 import React from "react";
 import './ImageText.css'
 
 const ImageText = () => {
     return (
       <div className="image-container">
-        <img src={require('./images/Image_with_text3.jpg')} alt="img" />
+        <img src={require('./images/image.jpeg')} alt="img" />
         <div className="text-overlay">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos amet corrupti iure, non quaerat quisquam delectus unde. Consequatur id exercitationem ea in itaque necessitatibus architecto quibusdam, perspiciatis ratione dolorum qui.
-          <button className="button">Button Text</button>
+        Art is a mirror of the soul. It reflects what we are and what we aspire to be. It is a way of expressing ourselves without words, a way of connecting with others on a deeper level. It is a way of finding meaning in the world.
+          
         </div>
         
       </div>
