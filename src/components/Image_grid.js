@@ -1,7 +1,7 @@
 import React from 'react';
 import './image_grid.css';
-import truck from './images/truck.jpg'
-import gift from './images/gift.jpg';
+import truck from './images/truck.png'
+import gift from './images/gift.png';
 import wallet from './images/wallet.png';
 import offer from './images/offers.jpg'
 
@@ -9,7 +9,7 @@ const ImageGrid = () => {
   return (
     <div className="image-grid">
       <div className="grid-item yellow">
-        <img src={truck} alt="Delivery" />
+        <img src={truck} alt="Delivery" height={5} width={10} />
         <p>Delivery</p>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
