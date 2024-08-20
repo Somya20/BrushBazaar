@@ -74,3 +74,12 @@
     background-color: #555;
   }
   
+
+  .testimonial-card img {
+    width: 100%;
+    height: auto;
+    max-width: 250px; /* Adjust width as needed */
+    max-height: 400px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%; /* Optional: for circular images */
+  }

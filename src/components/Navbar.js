@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import lock from "./images/lock.png";
 import twitter from './images/twitter-icon.png';
@@ -12,17 +12,18 @@ import profile from "./images/profile_icon.jpg";
 import menu from "./images/menu_bar.jpg";
 import { useCart } from './CartContext';
 import cartIcon from './images/cart.jpg';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
   const { cart } = useCart();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [showShowByRoomDropdown, setShowShowByRoomDropdown] = useState(false);
 
-  const goToLoginPage = () => {
-    navigate("/login");
-  };
+  // const goToLoginPage = () => {
+  //   navigate("/login");
+  // };
 
   return (
     <>
@@ -37,43 +38,29 @@ const Navbar = () => {
       }}>
         {/* Social Media Icons */}
         <div style={{ display: 'flex', gap: '8px' }}>
-          <a href="*"><img src={twitter} alt="Twitter" height={25} width={25} /></a>
-          <a href="*"><img src={facebook} alt="Facebook" height={25} width={25} /></a>
-          <a href="*"><img src={youtube} alt="YouTube" height={25} width={25} /></a>
-          <a href="*"><img src={pinterest} alt="Pinterest" height={25} width={25} /></a>
+          <a href="https://x.com/?lang=en"><img src={twitter} alt="Twitter" height={25} width={25} /></a>
+          <a href="https://www.facebook.com/"><img src={facebook} alt="Facebook" height={25} width={25} /></a>
+          <a href="https://www.youtube.com/"><img src={youtube} alt="YouTube" height={25} width={25} /></a>
+          <a href="https://in.pinterest.com/"><img src={pinterest} alt="Pinterest" height={25} width={25} /></a>
         </div>
 
         {/* Register and Login Buttons */}
         <div style={{ marginRight: '250px' }}>
-          <button
-            onClick={goToLoginPage}
-            style={{
-              marginRight: '1px',
-              marginLeft: '40px',
-              padding: '1px 1px',
-              backgroundColor: 'grey',
-              color: 'white',
-              border: 'none',
-              borderRadius: '0px'
-            }}>
-            REGISTER
-          </button>
+          <Link to="/BrushBazaar/src/components/Register.js">
+          <button className="register-button" >REGISTER</button>
+          </Link>
 
-          <button style={{
-            padding: '1px 1px',
-            backgroundColor: 'white',
-            color: 'black',
-            border: 'none',
-            borderRadius: '0px'
-          }}>
+          <Link to="/BrushBazaar/src/components/login.js">
+          <button className="login-button">
             <a href="*"><img src={lock} alt="." width={20} height={20} /></a>LOGIN
           </button>
+          </Link>
         </div>
       </nav>
 
       {/* Main Navigation Bar */}
       <nav className="navbar">
-        <img src={logo} alt="BRUSH BAZAAR" className="logo" />
+        <img src={logo} alt="BRUSH BAZAAR" className="logo"  height={70}  width={300}/ >
         <ul className="nav-links">
           <li 
             className="has-dropdown"
@@ -174,14 +161,18 @@ const Navbar = () => {
             )}
           </li>
           {/* <li><a href="/top-collections">TOP COLLECTIONS</a></li> */}
-          <li><a href="/commission-art">COMMISSION ART</a></li>
+          
           <li><a href="/indian-paintings">INDIAN PAINTINGS</a></li>
           <li><a href="/blog">BLOG</a></li>
+          <Link to="/BrushBazaar/src/components/Contact.js">
+          <li><a href="/commission-art">CONTACT</a></li>
+          </Link>
         </ul>
         <div className="nav-icons">
         <a href="/cart" className="cart-icon">
           <img src={cartIcon} alt="cart" />
           {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+          
         </a>
           <a href="/profile"><img src={profile} alt="profile" /></a>
           <a href="*"><img src={menu} alt="menu bar" /></a>

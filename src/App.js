@@ -15,6 +15,8 @@ import Login from './components/login';
 import LivingRoomView from './components/LivingRoomView';
 import { CartProvider } from './components/CartContext';
 import Cart from './components/Cart.js';
+import Register from './components/Register.js';
+import Contact from './components/Contact.js';
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="/BrushBazaar/src/components/Register.js" element={<Register />} />
+            <Route path="/BrushBazaar/src/components/login.js" element={<Login />} />
+            <Route path="/BrushBazaar/src/components/Contact.js" element={<Contact />} />
             <Route path="/living-room-view" element={<LivingRoomView />} />
             <Route path="/cart" element={<Cart />} />
             

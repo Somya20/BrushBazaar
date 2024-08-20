@@ -1,24 +1,28 @@
+
 import React, { useState } from 'react';
-import './Testimonials.css';
+import  './Testimonials.css';
+import review1 from './images/Nilisha_Kumari.jpg';
+import review2 from './images/saumya.jpeg';
+import review3 from './images/somya.jpeg';
 
 const Testimonials = () => {
   const testimonialsData = [
     {
-      name: 'Tatiana Levin',
-      image: '/images/tatiana-levin.jpg', // Place your image in the public/images folder
-      testimonial: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.',
+      name: 'Nilisha Raman',
+      image: review1, // Place your image in the public/images folder
+      testimonial: 'This page is a masterpiece this page is the best I have seen.',
       rating: 5,
     },
     {
-      name: 'Livia Geidt',
-      image: '/images/livia-geidt.jpg', // Place your image in the public/images folder
-      testimonial: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.',
+      name: 'Somya Singh',
+      image: review3, // Place your image in the public/images folder
+      testimonial: 'I am blown away by this page.This page is truly exceptional.',
       rating: 4,
     },
     {
-      name: 'James Geidt',
-      image: '/images/james-geidt.jpg', // Place your image in the public/images folder
-      testimonial: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.',
+      name: 'Saumya Pandey',
+      image: review2, // Place your image in the public/images folder
+      testimonial: 'The layout of this page is visually appealing and well-organized.The navigation on this page is intuitive and easy to use..',
       rating: 3,
     },
   ];
@@ -36,7 +40,12 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <h2>What Our Customers Say</h2>
-      <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum</p>
+      <p>
+
+"This page is a masterpiece."
+"I'm blown away by this page."
+"This page is truly exceptional."
+"This page is the best I've seen."</p>
       <div className="testimonial-carousel">
         {testimonialsData.map((testimonial, index) => (
           <div

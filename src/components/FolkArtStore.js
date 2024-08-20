@@ -1,5 +1,11 @@
+
 import React from 'react';
-import './FolkArtStore.css'
+import './FolkArtStore.css';
+import book1 from './images/folk-art-book-1.png';
+import book2 from './images/folk-art-book-2.png';
+import book3 from './images/folk-art-book-3.png';
+import book4 from './images/folk-art-book-4.png';
+import book5 from './images/folk-art-book-5.png';
 
 const FolkArtstore = () => {
   return (
@@ -12,27 +18,27 @@ const FolkArtstore = () => {
           {
             title: "The Tapestry of Tales",
             author: "Emma Stitchworth",
-            image: "/path-to-folk-art-book-1.jpg"
+            image:book1 
           },
           {
             title: "Whispers of the Loom",
             author: "Liam Threadgood",
-            image: "/path-to-folk-art-book-2.jpg"
+            image: book2
           },
           {
-            title: "Patterns of the Past",
+            title: "Patterns of the Past ",
             author: "Sophia Craftwell",
-            image: "/path-to-folk-art-book-3.jpg"
+            image: book3
           },
           {
             title: "Colors of Heritage",
             author: "Marcus Brushstrokes",
-            image: "/path-to-folk-art-book-4.jpg"
+            image: book4
           },
           {
             title: "Echoes in Embroidery",
             author: "Isabel Needleworth",
-            image: "/path-to-folk-art-book-5.jpg"
+            image: book5
           }
         ].map((book, index) => (
           <div key={index} className="book-item">
@@ -40,7 +46,9 @@ const FolkArtstore = () => {
             <h3>{book.title}</h3>
             <p>{book.author}</p>
             <p className="description">A journey through folk traditions and artistry</p>
-            <button className="view-more">View Tapestry</button>
+            <div className="button-container">
+              <button className="view-more">View Tapestry</button>
+            </div>
           </div>
         ))}
       </div>

@@ -90,3 +90,10 @@
       width: 100%;
     }
   }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 10px; /* Maintain spacing from description */
+  }
+  
