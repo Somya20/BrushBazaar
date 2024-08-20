@@ -163,7 +163,11 @@ const Navbar = () => {
           {/* <li><a href="/top-collections">TOP COLLECTIONS</a></li> */}
           
           <li><a href="/indian-paintings">INDIAN PAINTINGS</a></li>
+
+          <Link to="/BrushBazaar/src/components/BlogPosts.js">
           <li><a href="/blog">BLOG</a></li>
+          </Link>
+
           <Link to="/BrushBazaar/src/components/Contact.js">
           <li><a href="/commission-art">CONTACT</a></li>
           </Link>

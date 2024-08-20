@@ -75,6 +75,15 @@
   transition: background-color 0.3s ease;
 }
 
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  flex-grow: 1;
+}
+
 .purchase-btn:hover {
   background-color: #45a049;
 }
@@ -100,4 +109,61 @@
   .collection-section h2 {
     font-size: 2rem;
   }
+
+  .purchase-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .purchase-btn.in-cart {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .purchase-btn.out-of-stock {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .purchase-btn.in-cart {
+    background-color: #2196F3;
+  }
+  
+  .purchase-btn.out-of-stock {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .purchase-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .purchase-btn.in-cart {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .purchase-btn.out-of-stock {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+
 }

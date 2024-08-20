@@ -140,11 +140,16 @@
   margin-bottom: 10px;
 }
 
-.purchase-btn.in-cart {
-  background-color: #2196F3;
+.payment-options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 10px;
 }
 
-.purchase-btn.out-of-stock {
-  background-color: #ccc;
-  cursor: not-allowed;
+.loading,
+.error {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
 }

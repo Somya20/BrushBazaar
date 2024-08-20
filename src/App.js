@@ -7,7 +7,7 @@ import FolkArtStore from './components/FolkArtStore';
 import Footer from './components/footer';
 import Homepage from './components/Homepage';
 import ImageGrid from './components/Image_grid';
-import ImageText from './components/ImageText';
+import ImageCaraousel from './components/ImageCarousel.js'
 import Navbar from './components/Navbar';
 import PainterSection from './components/Painter_Section';
 import Testimonials from './components/Testimonials';
@@ -17,6 +17,8 @@ import { CartProvider } from './components/CartContext';
 import Cart from './components/Cart.js';
 import Register from './components/Register.js';
 import Contact from './components/Contact.js';
+import BlogPosts from './components/BlogPosts.js';
+
 
 
 function App() {
@@ -31,10 +33,11 @@ function App() {
             <Route path="/BrushBazaar/src/components/Contact.js" element={<Contact />} />
             <Route path="/living-room-view" element={<LivingRoomView />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/BrushBazaar/src/components/BlogPosts.js" element={<BlogPosts />} />
             
             <Route path="/" element={
               <>
-                <ImageText />
+                <ImageCaraousel />
                 <ImageGrid />
                 <Homepage />
                 <CollectionSection />
