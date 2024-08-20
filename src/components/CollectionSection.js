@@ -12,6 +12,8 @@ import forest from './images/forest.jpg';
 import love from './images/love.jpg';
 import sea from './images/sea.jpg';
 import flame from './images/flame.jpg';
+import { useCart } from './CartContext';
+
 
 
 const products = [
@@ -123,19 +125,39 @@ const products = [
     category: "Oil Painting",
   },
 
-  // Add 9 more products here to reach a total of 12
 ];
 
-const ProductCard = ({ product }) => (
-  <div className="product-card">
-    <img src={product.image} alt={product.name} className="product-image" />
-    <h3 className="product-name">{product.name}</h3>
-    <p className="product-price">${product.price.toFixed(2)}</p>
-    <p className="product-artist">{product.artist}</p>
-    <p className="product-bio">{product.artistBio}</p>
-    <button className="purchase-btn">Add to Cart</button>
-  </div>
-);
+
+
+const ProductCard = ({ product }) => {
+  const { cart, addToCart, loading } = useCart();
+
+  const isInCart = cart.some(item => item.id === product.id);
+  const isOutOfStock = product.stock === 0; // Assuming you have a 'stock' property in your product object
+
+  const handleAddToCart = () => {
+    if (!isInCart && !isOutOfStock) {
+      addToCart(product);
+    }
+  };
+
+  return (
+    <div className="product-card">
+      <img src={product.image} alt={product.name} className="product-image" />
+      <h3 className="product-name">{product.name}</h3>
+      <p className="product-price">${product.price.toFixed(2)}</p>
+      <p className="product-artist">{product.artist}</p>
+      <p className="product-bio">{product.artistBio}</p>
+      <button 
+        className={`purchase-btn ${isInCart ? 'in-cart' : ''} ${isOutOfStock ? 'out-of-stock' : ''}`}
+        onClick={handleAddToCart} 
+        disabled={loading || isInCart || isOutOfStock}
+      >
+        {isOutOfStock ? 'Out of Stock' : isInCart ? 'Added to Cart' : loading ? 'Adding...' : 'Add to Cart'}
+      </button>
+    </div>
+  );
+};
 
 const CollectionSection = () => {
   return (
