@@ -4,16 +4,24 @@
     font-family: 'Futura', sans-serif;
     color: #e0e0e0;
     background-color: #121212;
-    padding: 20px;
+    padding: 40px;
   }
   
-  h1 {
+  .art-discovery h1{
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #bc4c2d;
+  }
+
+  
+  /* h1 {
     text-align: center;
     color: #00ffff;
     margin-bottom: 20px;
     font-size: 2.5em;
     text-transform: uppercase;
-  }
+  } */
   
   nav ul {
     display: flex;
@@ -86,6 +94,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+
   }
   
   .arrow {
@@ -96,6 +105,7 @@
     font-size: 24px;
     cursor: pointer;
     border-radius: 50%;
+    opacity: 0.5;
     transition: all 0.3s ease;
   }
   
@@ -103,3 +113,4 @@
     background-color: #00ffff;
     color: #121212;
   }
+

@@ -12,10 +12,23 @@
   height: 50px;
 }
 
-.logo {
+.logo-container {
+  height: 100px; /* Set the desired height */
+  width: 100px; /* Maintain the aspect ratio */
   display: flex;
   align-items: center;
 }
+
+.logo-container h2{
+  color: rgb(247, 10, 116);
+}
+
+/* .logo {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  
+} */
 
 .register-button {
   margin-right: 10px;
@@ -100,6 +113,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+
 }
 
 .cart-icon {

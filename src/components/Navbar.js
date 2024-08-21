@@ -6,7 +6,7 @@ import twitter from './images/twitter-icon.png';
 import facebook from './images/facebook-img.png';
 import youtube from "./images/youtube-icon.png";
 import pinterest from "./images/Pinterest-icon.png";
-import logo from "./images/logo_brush_bazaar.png";
+// import logo from "./images/logo_brush_bazaar.png";
 // import cart from "./images/cart.jpg";
 import profile from "./images/profile_icon.jpg";
 import menu from "./images/menu_bar.jpg";
@@ -60,13 +60,23 @@ const Navbar = () => {
 
       {/* Main Navigation Bar */}
       <nav className="navbar">
-        <img src={logo} alt="BRUSH BAZAAR" className="logo"  height={70}  width={300}/ >
+
+        <div className="logo-container">
+        {/* <img src={logo} alt="BRUSH BAZAAR" className="logo" / > */}
+        <h2 className='logo'><b><i>BRUSH BAZAAR</i></b></h2>
+        </div>
+
+
         <ul className="nav-links">
+
+        <li><a href="/">HOME</a></li>
+
           <li 
             className="has-dropdown"
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
+
             <a href="/paintings">PAINTINGS</a>
             {showDropdown && (
               <div className="dropdown">
@@ -162,8 +172,7 @@ const Navbar = () => {
           </li>
           {/* <li><a href="/top-collections">TOP COLLECTIONS</a></li> */}
           
-          <li><a href="/indian-paintings">INDIAN PAINTINGS</a></li>
-
+          
           <Link to="/BrushBazaar/src/components/BlogPosts.js">
           <li><a href="/blog">BLOG</a></li>
           </Link>
@@ -173,12 +182,14 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="nav-icons">
-        <a href="/cart" className="cart-icon">
+        <a href="/cart" className="cart-icon" >
           <img src={cartIcon} alt="cart" />
           {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
           
         </a>
-          <a href="/profile"><img src={profile} alt="profile" /></a>
+          
+          <a href="/BrushBazaar/src/components/login.js" ><img src={profile} alt="profile" /></a>
+          
           <a href="*"><img src={menu} alt="menu bar" /></a>
         </div>
       </nav>

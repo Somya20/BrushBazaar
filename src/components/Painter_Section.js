@@ -1,5 +1,7 @@
 import React from 'react';
 import './Painter_section.css';
+import canvas from './images/canvas.jpg'
+import canvas2 from './images/canvas2.jpg'
 
 const PainterSection = () => {
   return (
@@ -33,7 +35,8 @@ const PainterSection = () => {
         </div>
       </div>
       <div className="image-section">
-        {/* Placeholder for artwork images */}
+      <img src={canvas} alt="canvas"  height={320} width={300}/>
+      <img src={canvas2} alt="canvas"  height={320} width={300}/>
       </div>
     </div>
   );

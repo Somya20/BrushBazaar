@@ -12,16 +12,20 @@ import underwaterOdyssey from './images/underwaterOdyssey.jpg'
 import surrealLandscapes from './images/surrealLandscapes.jpg'
 import abstractExpression from './images/abstractExpression.jpg'
 import digitalAlchemy from './images/digitalAlchemy.jpg'
+import { useNavigate } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
 const artworks = [
   {
     id: 1,
+     href: "https://neondreams.ch/collections/all-neon-art?srsltid=AfmBOoo03p-Z2BNbXkah4jWHxPEsfQZzdAE7eHBX6GbnnhJYzj-SDhs3", 
     image: neonDreams,
     title: "Neon Dreams",
     description: "A vibrant exploration of color and form in the digital realm."
   },
   {
     id: 2,
+    href:"https://pixels-memories.blogspot.com/",
     image: PixelatedMemories,
     title: "Pixelated Memories",
     artist: "PixelMaster",
@@ -29,6 +33,7 @@ const artworks = [
   },
   {
     id: 3,
+    href:'https://benswift.me/blog/2022/01/20/cybernetic-futures-explained/',
     image: CyberneticOasis,
     title: "Cybernetic Oasis",
     artist: "FutureScaper",
@@ -49,6 +54,7 @@ const artworks = [
   },
   {
     id: 6,
+    href:'https://indianartzone.com/the-feeling-cosmic-waves-in-emptiness',
     image: cosmicWaves,
     title: "Cosmic Waves",
     description: "A mesmerizing journey through interstellar space."
@@ -94,7 +100,11 @@ const artworks = [
 const artworksPerPage = 4;
 
 const DigitalArtGallery = () => {
+  
+  
+
   const [startIndex, setStartIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handleLeftClick = () => {
     setStartIndex((prevIndex) => Math.max(prevIndex - artworksPerPage, 0));
@@ -108,8 +118,17 @@ const DigitalArtGallery = () => {
 
   const displayedArtworks = artworks.slice(startIndex, startIndex + artworksPerPage);
 
+  const handleArtworkClick = (artwork) => {
+    if (artwork.href) {
+      window.open(artwork.href, '_blank');
+    } else {
+      // Navigate to a specific artwork page or display more details
+      navigate(`/artwork/${artwork.id}`);
+    }
+  };
+
   return (
-    <div className="art-discovery">
+    <div className="art-discovery" >
       <h1>Explore Digital Masterpieces</h1>
       <nav>
         <ul>
@@ -123,10 +142,8 @@ const DigitalArtGallery = () => {
         {displayedArtworks.map((artwork) => (
           <ArtPiece
             key={artwork.id}
-            image={artwork.image}
-            title={artwork.title}
-            artist={artwork.artist}
-            description={artwork.description}
+            artwork={artwork}
+            onClick={() => handleArtworkClick(artwork)}
           />
         ))}
       </div>
@@ -150,17 +167,17 @@ const DigitalArtGallery = () => {
   );
 };
 
-const ArtPiece = ({ image, title, artist, description }) => {
+const ArtPiece = ({ artwork, onClick }) => {
   return (
-    <div className="art-card">
-      <img src={image} alt={title} />
+    <div className="art-card" onClick={onClick}>
+      <img src={artwork.image} alt={artwork.title} />
       <div className="art-info">
-        <h3>{title}</h3>
-        {artist && <p className="artist">{artist}</p>}
-        <p className="description">{description}</p>
+        <h3>{artwork.title}</h3>
+        {artwork.artist && <p className="artist">{artwork.artist}</p>}
+        <p className="description">{artwork.description}</p>
       </div>
     </div>
   );
 };
 
-export default DigitalArtGallery;
+export default DigitalArtGallery
